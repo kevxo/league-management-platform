@@ -1,6 +1,9 @@
 import Dashboard from './Pages/Dashboard';
 import Navbar from "./Components/Layout/Navbar";
 import Sidebar from "./Components/Layout/Sidebar";
+import NotFound from './Pages/NotFound';
+import { Route, Routes } from 'react-router-dom';
+import Login from './Pages/Login';
 
 function App() {
   return (
@@ -11,7 +14,11 @@ function App() {
         <Navbar />
 
         <main className="p-6">
-          <Dashboard />
+          <Routes>
+            <Route path='/' element={<Dashboard />}/>
+            <Route path='/login' element={<Login />}/>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </main>
       </div>
     </div>
