@@ -6,14 +6,20 @@ import { Route, Routes } from 'react-router-dom';
 import Login from './Pages/Login';
 import { useLocation } from 'react-router-dom';
 import ProtectedRoute from './Components/ProtectedRoute';
+import Register from './Pages/Register';
 
 function App() {
   const location = useLocation();
 
   const isLoginPage = location.pathname === "/login";
+  const isRegisterPage = location.pathname === "/register";
 
   if (isLoginPage) {
     return <Login />
+  }
+
+  if (isRegisterPage) {
+    return <Register />
   }
 
   return (
@@ -38,6 +44,11 @@ function App() {
             <Route path="*" element={
               <ProtectedRoute>
                 <NotFound />
+              </ProtectedRoute>
+            } />
+            <Route path='/register' element={
+              <ProtectedRoute>
+                <Register/>
               </ProtectedRoute>
             } />
           </Routes>
