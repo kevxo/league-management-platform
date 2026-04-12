@@ -1,5 +1,5 @@
 const Dashboard = () => {
-  // mock data for now (you’ll replace with API later)
+  // mock data for now (replace with API later)
   const leagues = ["Premier League", "La Liga", "MLS"];
 
   const teams = ["Arsenal", "Barcelona", "Inter Miami", "Chelsea"];
